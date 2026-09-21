@@ -1,0 +1,8 @@
+node_modules
+.next
+.env
+.env.local
+public/qr
+*.log
+.DS_Store
+*.tsbuildinfo
