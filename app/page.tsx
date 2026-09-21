@@ -16,9 +16,6 @@ export default function HomePage() {
       >
         Панель руководителя →
       </Link>
-      <p className="text-xs text-slate-400">
-        Демо-объекты появятся после выполнения supabase/seed.sql — см. README.
-      </p>
     </main>
   );
 }
