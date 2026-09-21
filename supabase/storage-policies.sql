@@ -8,9 +8,11 @@
 -- только авторизованные пользователи (руководители).
 -- =====================================================================
 
-insert into storage.buckets (id, name, public)
-values ('report-photos', 'report-photos', true)
-on conflict (id) do nothing;
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('report-photos', 'report-photos', true, 5242880, array['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'])
+on conflict (id) do update set
+  file_size_limit = excluded.file_size_limit,
+  allowed_mime_types = excluded.allowed_mime_types;
 
 create policy "public read report-photos"
 on storage.objects for select
