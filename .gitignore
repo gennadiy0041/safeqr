@@ -6,3 +6,5 @@ public/qr
 *.log
 .DS_Store
 *.tsbuildinfo
+
+.vercel
